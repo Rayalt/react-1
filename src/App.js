@@ -3,8 +3,8 @@ import Counter from "./components/Counter";
 // import ClassCounter from "./components/ClassCounter";
 import './styles/styles.scss';
 import PostList from "./components/PostList";
-import Button from "./components/ui/button/Button";
-import Input from "./components/ui/input/Input";
+// import Button from "./components/ui/button/Button";
+// import Input from "./components/ui/input/Input";
 import PostForm from "./components/PostForm";
 import Filter from "./components/ui/filter/Filter";
 

@@ -1,0 +1,37 @@
+:root {
+	--btn-h: 48px;
+	--btn-main-w: auto;
+	--btn-icon-w: 48px;
+
+	--btn-primary-bg-cl-normal: #333438;
+	--btn-primary-bg-cl-hover: #57575d;
+	--btn-primary-bg-cl-focus: #333438;
+
+	--btn-primary-cl-normal: #ffffff;
+	--btn-primary-cl-hover: #ffffff;
+	--btn-primary-cl-focus: #ffffff;
+
+	--btn-primary-bg-cl-disabled: #71717a;
+	--btn-primary-shadow-disabled: none;
+	--btn-primary-cl-disabled: #ffffff;
+
+	--btn-primary-shadow-normal: none;
+	--btn-primary-shadow-hover: none;
+	--btn-primary-shadow-focus: 0 0 0 2px #ffffff, 0 0 0 4px #3a3a3a;
+
+	--btn-secondary-bg-cl-normal: #b7bfcb;
+	--btn-secondary-bg-cl-hover: #9198a1;
+	--btn-secondary-bg-cl-focus: #b7bfcb;
+
+	--btn-secondary-cl-normal: #333438;
+	--btn-secondary-cl-hover: #333438;
+	--btn-secondary-cl-focus: #333438;
+
+	--btn-secondary-shadow-normal: none;
+	--btn-secondary-shadow-hover: none;
+	--btn-secondary-shadow-focus: 0 0 0 1px #333438;
+
+	--btn-secondary-bg-cl-disabled: #d4d7de;
+	--btn-secondary-shadow-disabled: none;
+	--btn-secondary-cl-disabled: #333438;
+}

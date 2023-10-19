@@ -1,0 +1,18 @@
+.test {
+	background-color: var(--text-bg-cl);
+	color: var(--text-cl);
+	font-size: 16px;
+	line-height: 20px;
+	border-radius: 12px;
+	padding: 20px;
+
+	&--primary {
+		--text-bg-cl: var(--text-primary-bg-cl);
+		--text-cl: var(--text-primary-cl);
+	}
+
+	&--error {
+		--text-bg-cl: var(--text-secondary-bg-cl);
+		--text-cl: var(--text-secondary-cl);
+	}
+}

@@ -1,0 +1,45 @@
+.post {
+	background-color: var(--post-bg-cl);
+	color: var(--post-cl);
+	line-height: 20px;
+	border-radius: 12px;
+	padding: 20px;
+	display: flex;
+	align-items: flex-start;
+	justify-content: space-between;
+	border: 1px solid var(--post-border-cl);
+
+	+ .post {
+		margin-top: 32px;
+	}
+
+	&--primary {
+		--post-bg-cl: var(--post-primary-bg-cl);
+		--post-cl: var(--post-primary-cl);
+		--post-border-cl: var(--post-primary-border-cl);
+	}
+
+	&--error {
+		--post-bg-cl: var(--post-secondary-bg-cl);
+		--post-cl: var(--post-secondary-cl);
+		--post-border-cl: var(--post-secondary-border-cl);
+	}
+
+	&__content {
+		padding-right: 20px;
+	}
+
+	&__title,
+	&__text {
+		line-height: 1;
+	}
+
+	&__title {
+		font-size: 24px;
+	}
+
+	&__text	{
+		font-size: 14px;
+		margin-top: 16px;
+	}
+}
