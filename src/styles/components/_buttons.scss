@@ -1,5 +1,5 @@
 .btn {
-	--btn-w: var(--btn-main-w);
+	--btn-h: var(--btn-main-h);
 
 	display: inline-flex;
 	flex-shrink: 0;
@@ -73,7 +73,11 @@
 	}
 
 	&--icon {
-		--btn-w: var(--btn-icon-w);
+		--btn-w: var(--btn-h);
+	}
+
+	&--xs {
+		--btn-h: var(--btn-xs-h);
 	}
 
 	&--disabled,

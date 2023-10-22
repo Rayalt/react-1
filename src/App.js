@@ -7,6 +7,7 @@ import PostList from "./components/PostList";
 // import Input from "./components/ui/input/Input";
 import PostForm from "./components/PostForm";
 import Filter from "./components/ui/filter/Filter";
+import Section from "./components/dz/1/Section";
 
 function App() {
 	// const [value, setValue] = useState('Какой-то текст в инпуте');
@@ -62,7 +63,6 @@ function App() {
 	// const [title, setTitle] = useState('');
 	// const [text, setText] = useState('');
 
-
 	const createPost = (newPost) => {
 		setPosts([...posts, newPost])
 	}
@@ -83,6 +83,8 @@ function App() {
 	return (
 		<React.Fragment>
 			<div className="container">
+
+				<Section></Section>
 
 				<h2 className="heading">
 					Counter функциональный компонент

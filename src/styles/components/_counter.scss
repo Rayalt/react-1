@@ -8,4 +8,13 @@
 	+ .counter {
 		padding-top: 24px;
 	}
+
+	&__header {
+		display: flex;
+		align-items: center;
+	}
+
+	&__header-btn {
+		margin-left: 12px;
+	}
 }
