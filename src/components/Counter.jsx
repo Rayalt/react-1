@@ -2,6 +2,16 @@ import React, {useEffect, useState} from 'react';
 import Button from "./ui/button/Button";
 import declension from "../functions/declension";
 
+/**
+ * Написать хук для счётика значений и кликов
+ * {number} initialValue
+ * {number} clickCounter
+ * {Function} callback - при очистке (например алерт)
+ */
+const useCounter = (initialValue, clickCounter, callback) => {
+	// return { value, clickCounterValue }
+}
+
 const Counter = function () {
 	/*
 		useState хук состояния
@@ -20,9 +30,10 @@ const Counter = function () {
 		// componentDidMount, componentDidUpdate, componentWillUnmount
 	*/
 	const [counter, setCounter] = useState(7);
-
 	const [countClick, setCountClick] = useState(0);
 	const [title, setTitle] = useState('');
+
+	const { value, clickCounterValue } = useCounter(0, 0, console.log)
 
 	// useEffect(() => {
 	// 	console.log(`Всего нажали на кнопки счетчика ${countClick} раз`);
@@ -30,9 +41,7 @@ const Counter = function () {
 
 	useEffect(() => {
 		// howMushClicks(); вызовет бесконечное увеличение countClick
-		setTitle(`
-			Всего нажали на кнопки счетчика ${countClick} ${declension(countClick, 'раз', 'раза', 'раз')}
-		`);
+		setTitle(`Всего нажали на кнопки счетчика ${clickCounterValue}}`);
 	}, [countClick]);
 
 	function howMushClicks() {

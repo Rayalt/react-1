@@ -1,8 +1,8 @@
 import React from 'react';
 
-const Button = ({updateValue, title, btnText, btnClass, ...props}) => {
-	const clickHandler = () => {
-		updateValue();
+const Button = ({ updateValue, title, btnText, btnClass, ...props }) => {
+	const clickHandler = (event) => {
+		updateValue(3);
 	}
 
 	return (

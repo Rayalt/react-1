@@ -4,8 +4,8 @@ import Button from "./Button";
 const Section = () => {
 	const [value, setValue] = useState(0);
 
-	const updateValue = () => {
-		setValue(value + 1);
+	const updateValue = (decrementValue) => {
+		setValue(value + decrementValue);
 		console.log(value)
 	}
 
