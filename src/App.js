@@ -75,7 +75,8 @@ function App() {
 	const sortPosts = (sort) => {
 		setSelectedFilter(sort);
 
-		setPosts([...posts].sort((a, b) => a[sort].localeCompare(b[sort])));
+		// setPosts([...posts].sort((a, b) => a[sort].localeCompare(b[sort])));
+		// setPosts(.sort((a, b) => a[sort].localeCompare(b[sort])));
 		// localeCompare для правильной сортировки букв типа Ö
 		// setPosts([...posts].sort((a, b) => a[sort] > b[sort] ? 1 : -1));
 	}

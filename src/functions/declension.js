@@ -1,5 +1,5 @@
 function getNoun(number, one, two, five) {
-	let n = Math.abs(number);
+	let n = number;
 	n %= 100;
 	if (n >= 5 && n <= 20) {
 		return five;
