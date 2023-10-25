@@ -75,8 +75,8 @@ function App() {
 	const sortPosts = (sort) => {
 		setSelectedFilter(sort);
 
+		setPosts((prevState) => prevState.sort((a, b) => a[sort].localeCompare(b[sort])))
 		// setPosts([...posts].sort((a, b) => a[sort].localeCompare(b[sort])));
-		// setPosts(.sort((a, b) => a[sort].localeCompare(b[sort])));
 		// localeCompare для правильной сортировки букв типа Ö
 		// setPosts([...posts].sort((a, b) => a[sort] > b[sort] ? 1 : -1));
 	}
@@ -85,13 +85,13 @@ function App() {
 		<React.Fragment>
 			<div className="container">
 
-				<Section></Section>
+				<Section />
 
 				<h2 className="heading">
 					Counter функциональный компонент
 				</h2>
-				<Counter></Counter>
-				<Counter></Counter>
+				<Counter />
+				<Counter />
 
 				{/*
 				<h2 className="heading">
