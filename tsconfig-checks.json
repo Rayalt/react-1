@@ -1,0 +1,19 @@
+{
+  "compilerOptions": {
+    // Strict Checks
+    "strict": true,
+    "alwaysStrict": true,
+    // если включен "strict": true, значит alwaysStrict тоже включен, но лучше указывать явно
+    "noImplicitAny": true,
+    "strictNullChecks": true,
+    "strictPropertyInitialization": true,
+    "strictFunctionTypes": true,
+    "noImplicitThis": true,
+    "strictBindCallApply": true,
+
+    // Linter Checks, не заменить линтером
+    "noPropertyAccessFromIndexSignature": true,
+    "noUncheckedIndexedAccess": true,
+    "noImplicitReturns": true
+  }
+}

@@ -8,6 +8,7 @@ import PostList from "./components/PostList";
 import PostForm from "./components/PostForm";
 import Filter from "./components/ui/filter/Filter";
 import Section from "./components/dz/1/Section";
+import Section2 from "./components/dz/2/Section2";
 
 function App() {
 	// const [value, setValue] = useState('Какой-то текст в инпуте');
@@ -157,6 +158,7 @@ function App() {
 				></PostList>*/}
 
 
+				<Section2 />
 			</div>
 
 		</React.Fragment>

@@ -33,15 +33,16 @@ const Counter = function () {
 	const [countClick, setCountClick] = useState(0);
 	const [title, setTitle] = useState('');
 
-	const { value, clickCounterValue } = useCounter(0, 0, console.log)
-
 	// useEffect(() => {
 	// 	console.log(`Всего нажали на кнопки счетчика ${countClick} раз`);
 	// }, [countClick]);
 
 	useEffect(() => {
 		// howMushClicks(); вызовет бесконечное увеличение countClick
-		setTitle(`Всего нажали на кнопки счетчика ${clickCounterValue}}`);
+		setTitle(`
+			Всего нажали на кнопки счетчика ${countClick} 
+			${declension(countClick, 'раз', 'раза', 'раз')}
+		`);
 	}, [countClick]);
 
 	function howMushClicks() {
