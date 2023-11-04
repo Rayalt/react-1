@@ -1,4 +1,4 @@
-import React, {useState} from "react";
+import React, {useMemo, useState} from "react";
 import Counter from "./components/Counter";
 // import ClassCounter from "./components/ClassCounter";
 import './styles/styles.scss';
@@ -9,6 +9,7 @@ import PostForm from "./components/PostForm";
 import Filter from "./components/ui/filter/Filter";
 import Section from "./components/dz/1/Section";
 import Section2 from "./components/dz/2/Section2";
+import Input from "./components/ui/input/Input";
 
 function App() {
 	// const [value, setValue] = useState('Какой-то текст в инпуте');
@@ -36,6 +37,7 @@ function App() {
 		},
 	]);
 	const [selectedFilter, setSelectedFilter] = useState('');
+	const [searchInput, setSearchInput] = useState('');
 
 	/*const [posts2, setPosts2] = useState([
 		{
@@ -65,34 +67,56 @@ function App() {
 	// const [text, setText] = useState('');
 
 	const createPost = (newPost) => {
-		setPosts([...posts, newPost])
+		setPosts([...posts, newPost]);
 	}
 
 	const deletePost = (post) => {
 		setPosts(posts.filter(p => p.id !== post.id));
 	}
 
+	const getSortedPosts = () => {
+		console.log('getSortedPosts done');
+
+		if (selectedFilter) {
+			// setSelectedFilter(selectedFilter);
+			return [...posts].sort((a, b) => a[selectedFilter].localeCompare(b[selectedFilter]));
+		}
+
+		return posts;
+	};
+
+	const sortedPosts = getSortedPosts();
+
+	// console.log(sortedPosts);
 
 	const sortPosts = (sort) => {
+		console.log('sortPosts');
 		setSelectedFilter(sort);
 
-		setPosts((prevState) => prevState.sort((a, b) => a[sort].localeCompare(b[sort])))
+		setPosts((prevState) =>
+			prevState.sort((a, b) => a[sort].localeCompare(b[sort])));
+
 		// setPosts([...posts].sort((a, b) => a[sort].localeCompare(b[sort])));
 		// localeCompare для правильной сортировки букв типа Ö
 		// setPosts([...posts].sort((a, b) => a[sort] > b[sort] ? 1 : -1));
 	}
 
+	// const getSortedPosts = useMemo(() => {
+	// 	sortPosts();
+	// },
+	// []);
+
 	return (
 		<React.Fragment>
 			<div className="container">
 
-				<Section />
+				<Section/>
 
 				<h2 className="heading">
 					Counter функциональный компонент
 				</h2>
-				<Counter />
-				<Counter />
+				<Counter/>
+				<Counter/>
 
 				{/*
 				<h2 className="heading">
@@ -139,12 +163,18 @@ function App() {
 					]}
 				></Filter>
 
+				<Input
+					value={searchInput}
+					onChange={e => setSearchInput(e.target.value)}
+					placeholder="Поиск"
+				/>
+
 				{
 					posts.length !== 0
 						?
 						<PostList
 							remove={deletePost}
-							posts={posts}
+							posts={sortedPosts}
 							title="Все посты раз"
 						></PostList>
 						:
@@ -158,7 +188,7 @@ function App() {
 				></PostList>*/}
 
 
-				<Section2 />
+				<Section2/>
 			</div>
 
 		</React.Fragment>
