@@ -15,10 +15,10 @@ const Section2 = () => {
 		10, 9, 8, 2, 6, 5, 4, 3, 7, 1
 	];
 
-	console.log('arrToSort', arrToSort);
+	// console.log('arrToSort', arrToSort);
 
-	console.log('arrSortBubble result', arrSortBubble([...arrToSort]));
-	console.log('arrSortSelection result', arrSortSelection([...arrToSort]));
+	// console.log('arrSortBubble result', arrSortBubble([...arrToSort]));
+	// console.log('arrSortSelection result', arrSortSelection([...arrToSort]));
 
 	return (
 		<React.Fragment>

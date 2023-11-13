@@ -74,7 +74,7 @@ function App() {
 		setPosts(posts.filter(p => p.id !== post.id));
 	}
 
-	const getSortedPosts = () => {
+	const sortedPosts = useMemo(() => {
 		console.log('getSortedPosts done');
 
 		if (selectedFilter) {
@@ -83,11 +83,24 @@ function App() {
 		}
 
 		return posts;
-	};
-
-	const sortedPosts = getSortedPosts();
-
+	}, [selectedFilter, posts]);
 	// console.log(sortedPosts);
+
+	/*
+	* Хук useMemo сортирует массив и кеширует рез-т (мемоизация), на каждую перерисовку компонента достает рез-т
+	* из кеша, если рез-т не меняется, иначе пересчитывает и кеширует заново
+	* (помогает уменьшить кол-во перерисовок компонента при поиске например)
+	* useMemo(() => {
+	* return res;
+	}, [variables]);
+	* */
+	const sortSearchPosts = useMemo(() => {
+		return sortedPosts.filter(
+			post =>
+				post.title.toLowerCase().includes(searchInput.toLowerCase())
+				|| post.text.toLowerCase().includes(searchInput.toLowerCase())
+		);
+	}, [searchInput, sortedPosts]);
 
 	const sortPosts = (sort) => {
 		console.log('sortPosts');
@@ -170,11 +183,11 @@ function App() {
 				/>
 
 				{
-					posts.length !== 0
+					sortSearchPosts.length !== 0
 						?
 						<PostList
 							remove={deletePost}
-							posts={sortedPosts}
+							posts={sortSearchPosts}
 							title="Все посты раз"
 						></PostList>
 						:

@@ -1,14 +1,11 @@
 function getNoun(number, one, two, five) {
-	let n = number;
-	n %= 100;
-	if (n >= 5 && n <= 20) {
+	if (number >= 5 && number <= 20) {
 		return five;
 	}
-	n %= 10;
-	if (n === 1) {
+	if (number === 1) {
 		return one;
 	}
-	if (n >= 2 && n <= 4) {
+	if (number >= 2 && number <= 4) {
 		return two;
 	}
 	return five;

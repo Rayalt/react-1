@@ -18,7 +18,7 @@ const Button2 = ({
 		console.log(value);
 	}
 
-	val(1); // todo: noImplicitAny не работает если явно указать any
+	// val(1); // todo: noImplicitAny не работает если явно указать any
 
 	function val2(value: number) {
 		return value * 3;
